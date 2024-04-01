@@ -1,0 +1,36 @@
+<%- include("../eShopPartials/header", {title: title}); %>
+
+<p>inside Products.ejs</p>
+<h1> All avalible products inside shop...</h1>
+
+    <button style="background-color:darkslategray ">
+        <a href="/eShop/createProduct" style="color: lightseagreen;" >create Products</a>
+    </button>
+<table>
+    <tr>
+        <th>product_id</th>
+        <th>name</th>
+        <th>price</th>
+        <th>category</th>
+        <th>amount</th>
+        <th>Actions</th>
+
+    </tr>
+    <% product[0].forEach(function(product) { %>
+        <tr>
+            <td><%= product.product_id %></td>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.category %></td>
+            <td><%= product.amount %></td>
+            <td> 
+                <a href="./updateProduct/<%= product.product_id %>">update </a>
+                <a href="./deleteProduct/<%= product.product_id %>">Delete </a>
+            </td>
+        </tr>
+    <% }); %>
+</table>
+
+
+
+<%- include("../eShopPartials/footer"); %>

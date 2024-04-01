@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %>
+
+<h1>Welcome to DELETE</h1>
+<form method="post" action="/delete">
+    
+        <label>ID</label>
+        <input type="text" name="f_userID" value="<%= onlyTheAcount.id %>" readonly> <br>
+    <hr>
+
+    <label>Name</label>
+    <input type="text" name="f_name" value="<%= onlyTheAcount.name %>" readonly> <br> 
+    <hr>
+
+    <label>Balance</label>
+    <input type="number" name="f_balance" value="<%= onlyTheAcount.balance %>" onkeydown="return false" readonly>
+        <br>
+        <hr>
+    <input type="submit" value="delete!">
+    
+</form>
+
+<%- include("../partials/footer.ejs") %>

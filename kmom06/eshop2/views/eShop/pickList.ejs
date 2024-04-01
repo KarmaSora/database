@@ -1,0 +1,50 @@
+<%- include("../eShopPartials/header", {title: title}); %>
+
+<h1> Create your order here!   </h1>
+
+<h2>Order ID nummber : <%= order_id %></h2>
+
+<h3>
+    testa skapa ny procedure: kanske joina product med stockshelf och lägg till form in i tablellen som tar emot antal producter
+    SE till att använda max, min för att begränsa antal produkter som kan beställas - Karma
+        
+    <br>CALL get_stock_shelf_products();
+</h3>
+
+<h2>current items in list...</h2>
+<table>
+<th> order_id </th>
+<th> product_id </th>
+<th> name </th>
+<th> ordered_quantity </th>
+<th> product_price </th>
+<% total_cost = 0 %> 
+<% pickList.forEach(item => { %> 
+    
+    <tr>
+        <td><%= item.order_id %></td>
+        <td><%= item.product_id %></td>
+        <td><%= item.name %></td>
+        <td><%= item.ordered_quantity %></td>
+        <td><%= item.price %></td>
+    </tr>
+    <% total_cost += item.price %> 
+    
+    <% }); %>
+</table>
+        <h3>the entire list costs you..: <%= total_cost %></h3> 
+<button> <a href="stockShelves/<%= order_id %>">view shelves and add items here: </a></button>
+
+<form action="../confirmedOrder" method="post">
+
+    <input type="hidden" name="order_id" value="<%= order_id %>">
+    
+    <button type="submit" style="background-color: darkcyan;">confirm the order</button>
+</form>
+
+    <button ><a href="/eShop/order">go and see all orders</a></button>
+
+
+<%- include("../eShopPartials/footer"); %>
+
+

@@ -1,0 +1,23 @@
+<%- include("../eShopPartials/header", {title:title}); %>
+
+<h1>Welcome to create Products</h1>
+<form method="post">
+    
+        <label>product_id</label>
+        <input type="number" name="product_id" value="<%= rowCounter[0].row_count +1 %>" placeholder="<%= rowCounter[0].row_count +1 %>"> 
+        <br>
+        <hr>
+
+    <label>name</label>
+    <input type="text" name="name" > <br> 
+    <hr>
+
+    <label>price</label>
+    <input type="number" name="price">
+        <br>
+        <hr>
+    <input type="submit" value="Create!">
+    
+</form>
+
+<%- include("../eShopPartials/footer"); %>

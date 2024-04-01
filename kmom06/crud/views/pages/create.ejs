@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %>
+
+<h1>Welcome to create</h1>
+<form method="post">
+    
+        <label>ID</label>
+        <input type="text" name="f_userID"> <br>
+    <hr>
+
+    <label>Name</label>
+    <input type="text" name="f_name" > <br> 
+    <hr>
+
+    <label>Balance</label>
+    <input type="number" name="f_balance" max="99" min="0" inputmode="numeric" onkeydown="return false">
+        <br>
+        <hr>
+    <input type="submit" value="Create!">
+    
+</form>
+
+<%- include("../partials/footer.ejs") %>

@@ -1,0 +1,58 @@
+<%- include("../eShopPartials/header", {title: title}); %>
+
+
+<% if(orders) {%>
+    <h1> Current orders for customer with id = <%= customers_id %> </h1> 
+
+<table>
+    <th>order_id</th>
+    <th>customer_id</th>
+    <th>date_of_order</th>
+    <th>ordered_quantity</th>
+    <th>order status</th>
+    <th></th>
+    <% orders.forEach(function(order) {%>
+
+        <tr>
+            <td><%= order.order_id %></td>
+            <td><%= order.customer_id %></td>
+            <td><%= order.date_of_order %></td>
+            <td><%= order.ordered_quantity %></td>
+            <td><%= order.status %></td>
+            <td><button><a href="/eShop/pickList/<%= order.order_id %>">Make the order</a></button></td>
+        </tr>
+    <%  }); %>
+
+</table>
+
+<section style="   display: flex;
+justify-content: center; ">
+
+<form action="/eShop/order" method="post">
+
+    <input type="hidden" name="customer_id" value="<%= customers_id %>">
+    <button class="createTheOrder" value="send" style=" background-color: darkcyan;
+    width: 100px; display: inline-block;" type="submit">Create order</button>
+</form>
+
+    <!-- <script>
+
+        document.querySelector('.createTheOrder').addEventListener('click', function() {
+
+            window.location.href="/eshop/order"
+            alert('Order created');
+        
+        });
+    </script> -->
+
+<button onclick="window.location.href='../../customer';" style=" background-color: rgb(58, 201, 201);
+width: 100px; display: inline-block;">Click to Redirect</button>
+</section>
+
+<% }%>
+<% if(!orders[0] ){  %>
+    <h2 style="margin: 0 auto; text-align: center;  "> no orders are made yet</h2>
+<% }%>
+
+
+<%- include("../eShopPartials/footer"); %>

@@ -1,0 +1,27 @@
+<%- include ("../eShopPartials/header", {title:title});  %>
+
+<h1>Welcome to the e-shop</h1>
+<p> customers</p>
+
+<table>
+    <th>customer_id</th>
+    <th>name</th>
+    <th>address</th>
+    <th>phone_number</th>
+    <th>email</th>
+    <th>Create order</th>
+    <% customers.forEach(function(cus) { %>
+        <tr>
+            <td><%= cus.customer_id %></td>
+            <td><%= cus.name %></td>
+            <td><%= cus.address %></td>
+            <td><%= cus.phone_number %></td>
+            <td><%= cus.email %></td>
+            <td><button><a href="/eShop/order/create/<%= cus.customer_id %>">Order Here</a></button></td>
+        </tr>
+    <% }); %>
+</table>
+
+
+<%- include("../eShopPartials/footer"); %>
+

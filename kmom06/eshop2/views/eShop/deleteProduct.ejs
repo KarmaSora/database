@@ -1,0 +1,21 @@
+<%- include("../eShopPartials/header", {title: title}); %>
+
+<h1>Welcome to Delete Products</h1>
+<form method="post" action="/eShop/deleteProduct">
+        <label>product_id</label>
+        <input type="text" name="product_id" value="<%= theProduct.product_id %>" readonly> <br>
+    <hr>
+
+    <label>name</label>
+    <input type="text" name="name"  value="<%= theProduct.name %>" readonly > <br> 
+    <hr>
+
+    <label>price</label>
+    <input type="number" name="price" value="<%= theProduct.price %>" readonly>
+        <br>
+        <hr>
+    <input type="submit" value="Confirm and Delete!">
+    
+</form>
+
+<%- include("../eShopPartials/footer"); %>

@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %>
+
+<h1>Welcome to update</h1>
+<form method="post" action="/update">
+    
+        <label>ID</label>
+        <input type="text" name="f_userID" value="<%= onlyTheAcount.id %>" readonly> <br>
+    <hr>
+
+    <label>Name</label>
+    <input type="text" name="f_name" value="<%= onlyTheAcount.name %>"> <br> 
+    <hr>
+
+    <label>Balance</label>
+    <input type="number" name="f_balance" value="<%= onlyTheAcount.balance %>" max="99" min="0" inputmode="numeric" onkeydown="return false">
+        <br>
+        <hr>
+    <input type="submit" value="Update!">
+    
+</form>
+
+<%- include("../partials/footer.ejs") %>

@@ -1,0 +1,30 @@
+<%- include("../partials/header.ejs") %>
+
+Bank .ejs inside pages
+
+
+<table>
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Balance</th>
+            <th>actions</th>
+
+        </tr>
+        <tr>
+            <% for (const account of allAccounts){ %>
+
+            <td><%= account.name %> </td>
+            <td><%= account.id %> </td>
+            <td><%= account.balance %> </td>
+            <td> 
+                <a href="/update/<%= account.id %>">update </a>
+                <a href="/delete/<%= account.id %>">Delete </a>
+
+            </td>
+        </tr>
+        <% } %>
+    </table>
+
+
+<%-  include("../partials/footer.ejs") %>

@@ -1,0 +1,44 @@
+<%- include("../eShopPartials/header", {title: title}); %>
+
+<p>inside stockShelves.ejs</p>
+<h1> All avalible stockShelves/products inside shop...</h1>
+
+
+<table>
+    <tr>
+        <th>product_id</th>
+        <th>name</th>
+        <th>price</th>
+        <th>category</th>
+        <th>amount</th>
+        <th>to Purchase</th>
+        <th>confirm choices</th>
+
+
+    </tr>
+    <% theShelves[0].forEach(function(product) { %>
+        <tr>
+            <td><%= product.product_id %></td>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.category %></td>
+            <td><%= product.amount %></td>
+            <form action="/eShop/pickList" method="post">
+            <td><input type="number" value="1"  name="number_to_buy" max="<%= product.amount %>" min="1"></td>
+                <input type="hidden" name="product_id" value="<%= product.product_id %>">
+                <input type="hidden" name="order_id" value="<%= order_id %>">
+
+            <td><input type="submit" value="confirm Purchase "></td>
+                </form>
+
+            </td>
+        </tr>
+    <% }); %>
+</table>
+
+<button><a href="/eShop/pickList/<%= order_id %>">go back to your orders..</a></button>
+
+
+
+
+<%- include("../eShopPartials/footer"); %>

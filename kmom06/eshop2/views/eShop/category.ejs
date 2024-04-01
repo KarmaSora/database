@@ -1,0 +1,26 @@
+<%- include ("../eShopPartials/header", {title:title});  %>  <!-- kommer synas på skärmen som html... -->
+
+
+<h1>PROJECT Cat </h1>
+
+<p>Inside Category</p>
+
+<h1> THANKS FOR NOTHING  </h1>
+<table>
+    <tr>
+        <th>category_id</th>
+        <th>category_name</th>
+    </tr>
+    <% categories[0].forEach(function(cat) { %>
+        <tr>
+            <td><%= cat.category_id %></td>
+            <td><%= cat.category_name %></td>
+
+        </tr>
+    <% }); %>
+</table>
+
+
+
+<%- include("../eShopPartials/footer"); %>
+

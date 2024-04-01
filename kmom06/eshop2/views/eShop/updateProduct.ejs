@@ -1,0 +1,21 @@
+<%- include("../eShopPartials/header", {title: title}); %>
+
+<h1>Welcome to Update Products</h1>
+<form method="post" action="/eShop/updateProduct">
+        <label>product_id</label>
+        <input type="text" name="product_id" value="<%= theProduct.product_id %>" readonly> <br>
+    <hr>
+
+    <label>name</label>
+    <input type="text" name="name"  value="<%= theProduct.name %>" > <br> 
+    <hr>
+
+    <label>price</label>
+    <input type="number" name="price" value="<%= theProduct.price %>">
+        <br>
+        <hr>
+    <input type="submit" value="Update!">
+    
+</form>
+
+<%- include("../eShopPartials/footer"); %>

@@ -1,0 +1,33 @@
+
+<h1>kmom06</h1>
+<form >
+
+
+    <select name="" >
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+        <option value="yellow">yellow</option>
+    </select>
+    Colour: <input type="color" id="color">
+
+    
+
+    <input type="submit" value="submit">
+    
+</form>
+
+<script>
+    let chosenColor = document.getElementById("id");
+
+    chosenColor.addEventListener("change", function(event) {
+        console.log(event.target.value);
+        let color = event.target.value;
+
+        document.body.style.backgroundColor = color;
+    });
+    
+
+</script>
+
+
